@@ -1,0 +1,195 @@
+/* Static Variables */
+:root {
+    --admin-header-height: 70px;
+    --admin-footer-height: 70px;
+    --admin-nav-width: 250px;
+    --spacing: 1rem;
+    --column-count: 2;
+  }
+  
+  @media screen and (min-width: 48rem) {
+    :root {
+      --spacing: 2rem;
+      --column-count: 4;
+    }
+  }
+  
+  /* Global CSS */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Main Layout Grid */
+  .admin {
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    height: 100vh;
+    background-color: white;
+    grid-template-rows: var(--admin-header-height) 1fr var(--admin-footer-height);
+    grid-template-columns: var(--admin-nav-width) 1fr;
+    grid-template-areas: "header header"
+                         "nav main"
+                         "footer footer";
+  }
+  
+  .admin__header {
+    display: flex;
+    flex-basis: 100%;
+    grid-area: header;
+    height: var(--admin-header-height);
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    position: relative;
+    
+  }
+  
+  .admin__nav {
+    flex: 0 0 var(--admin-nav-width);
+    grid-area: nav;
+    background-color: black;
+    height: 88.3vh;
+  }
+  
+  .admin__main {
+    flex: 1;
+    grid-area: main;
+    padding: var(--spacing);
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* -webkit-overflow-scrolling: touch; */
+    background-color: #f4f7fa;
+  }
+  
+ 
+
+  /* Demo stuff to make it look nice */
+  a {
+    color: #dc5a60;
+    text-decoration: none;
+  }
+  
+  .logo {
+    display: flex;
+    flex: 0 0 var(--admin-nav-width);
+    height: var(--admin-header-height);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    color: #fff;
+    background-color: black;
+    font-size: 1rem;
+  }
+  .logo h5 {
+    margin: 0;
+    margin-left: 5px;
+  }
+  .logo img{
+    width: 60px;
+    height: 60px;
+  }
+  
+  .toolbar {
+    display: flex;
+    flex: 1;
+    justify-content: end;
+    align-items: center;
+    padding: 0 var(--spacing);
+  }
+  
+  .menu {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu__item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .menu__item a{
+    color: white;
+  }
+  .affy{
+    font-weight: 400;
+  }
+
+  .user-avatar{
+    width: 50px;
+    height: 50px;
+  }
+  
+  .menu__link {
+    display: block;
+    padding: 1rem 2rem;
+    color: #76808f;
+    text-decoration: none;
+  }
+  
+  .menu__link:hover,
+  .menu__link:focus {
+    color: #fff;
+    background-color: #1f222d;
+  }
+  
+  .card {
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    /* font-size: 2rem; */
+    font-weight: 300;
+    background-color: white;
+  }
+  
+  .btn {
+    display: inline-block;
+    border-radius: 5em;
+    border: 0;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
+  
+  .btn--primary {
+    color: #fff;
+    background-color: #56bf89;
+  }
+  
+ 
+
+  .card-post {
+  margin-bottom: 20px; /* Adds space between the cards */
+}
+
+.card-post__image img {
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+}
+
+.main-content-container {
+  margin-top: 20px;
+}
